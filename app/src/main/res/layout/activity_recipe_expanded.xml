@@ -14,7 +14,8 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/recipe_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:background="@color/secondMenuIconColor"/>
 
         <ImageView
             android:id="@+id/recipeImage"

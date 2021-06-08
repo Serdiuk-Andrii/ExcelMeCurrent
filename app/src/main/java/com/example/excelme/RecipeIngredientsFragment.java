@@ -28,7 +28,5 @@ public class RecipeIngredientsFragment extends Fragment {
         RecipeExpandedActivity activity = (RecipeExpandedActivity) getActivity();
         TextView ingredientsView = view.findViewById(R.id.ingredientsTextView);
         ingredientsView.setText(activity.ingredients);
-        TextView nutritionView = view.findViewById(R.id.nutritionTextView);
-        nutritionView.setText(activity.nutrition);
     }
 }
