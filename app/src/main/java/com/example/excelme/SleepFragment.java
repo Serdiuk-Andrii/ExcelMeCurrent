@@ -13,9 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.timepicker.MaterialTimePicker;
@@ -27,13 +29,10 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 
-public class SleepFragment extends Fragment implements TimePickerDialog.OnTimeSetListener{
+public class SleepFragment extends Fragment{
 
     private Activity activity;
     private TextView alarmTextView;
-    private static final MaterialTimePicker.Builder builder =
-            new MaterialTimePicker.Builder().setTimeFormat(TimeFormat.CLOCK_12H).setTitleText("Alarm clock");
-
 
     public SleepFragment() {
         // Required empty public constructor
@@ -58,9 +57,23 @@ public class SleepFragment extends Fragment implements TimePickerDialog.OnTimeSe
         buttonSetTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MaterialTimePicker picker = builder.build();
-                picker.show(getChildFragmentManager(), "tag");
+                DialogFragment picker = new com.example.excelme.TimePicker(
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                Toast.makeText(activity, "In onTimeSet()", Toast.LENGTH_LONG).show();
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                                calendar.set(Calendar.MINUTE, minute);
+                                calendar.set(Calendar.SECOND, 0);
 
+                                updateTimeText(calendar);
+                                startAlarm(calendar);
+                            }
+                        }
+
+                );
+                picker.show(getChildFragmentManager(), "tag");
             }
         });
 
@@ -72,6 +85,7 @@ public class SleepFragment extends Fragment implements TimePickerDialog.OnTimeSe
             }
         });
         activity = getActivity();
+
     }
 
     private void cancelAlarm() {
@@ -81,19 +95,6 @@ public class SleepFragment extends Fragment implements TimePickerDialog.OnTimeSe
 
         alarmManager.cancel(pendingIntent);
         alarmTextView.setText("No alarm set yet");
-    }
-
-    @Override
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-        calendar.set(Calendar.MINUTE, minute);
-        calendar.set(Calendar.SECOND, 0);
-
-        updateTimeText(calendar);
-        startAlarm(calendar);
-
-
     }
 
     private void updateTimeText(Calendar calendar) {
@@ -107,6 +108,4 @@ public class SleepFragment extends Fragment implements TimePickerDialog.OnTimeSe
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }
-
-
 }
