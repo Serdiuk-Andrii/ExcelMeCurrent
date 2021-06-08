@@ -26,7 +26,8 @@ public class RecipeExpandedActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private RecipeIngredientsFragment ingredientsFragment;
-    private RecipeCookingFragment nutritionFragment;
+    private RecipeCookingFragment cookingFragment;
+    private RecipeNutritionFragment nutritionFragment;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ImageView imageView;
@@ -48,7 +49,8 @@ public class RecipeExpandedActivity extends AppCompatActivity {
 
 
         ingredientsFragment = new RecipeIngredientsFragment();
-        nutritionFragment = new RecipeCookingFragment();
+        nutritionFragment = new RecipeNutritionFragment();
+        cookingFragment = new RecipeCookingFragment();
 
         tabLayout.setupWithViewPager(viewPager);
         imageView = findViewById(R.id.recipeImage);
@@ -56,6 +58,7 @@ public class RecipeExpandedActivity extends AppCompatActivity {
         RecipeViewAdapter adapter = new RecipeViewAdapter(getSupportFragmentManager(), 0);
         adapter.ingredientsFragment = this.ingredientsFragment;
         adapter.nutritionFragment = this.nutritionFragment;
+        adapter.cookingFragment = this.cookingFragment;
         viewPager.setAdapter(adapter);
 
         setRecipeInformation();
@@ -85,7 +88,8 @@ public class RecipeExpandedActivity extends AppCompatActivity {
     private static class RecipeViewAdapter extends FragmentPagerAdapter {
 
         private RecipeIngredientsFragment ingredientsFragment;
-        private RecipeCookingFragment nutritionFragment;
+        private RecipeCookingFragment cookingFragment;
+        private RecipeNutritionFragment nutritionFragment;
 
         public RecipeViewAdapter(@NonNull @NotNull FragmentManager fm, int behavior) {
             super(fm, behavior);
@@ -97,12 +101,14 @@ public class RecipeExpandedActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             if(position == 0)
                 return ingredientsFragment;
+            else if(position == 1)
+                return cookingFragment;
             return nutritionFragment;
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
 
         @Nullable
@@ -111,7 +117,9 @@ public class RecipeExpandedActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             if(position == 0)
                 return "Products";
-            return "Cooking";
+            else if(position ==1)
+                return "Cooking";
+            return "Nutrition";
         }
     }
 

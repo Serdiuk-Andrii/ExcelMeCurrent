@@ -110,6 +110,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Vi
 
         private TextView recipeName;
         private ImageView recipeImage;
+
         private CardView card;
 
         public ViewHolder(@NonNull View itemView) {
