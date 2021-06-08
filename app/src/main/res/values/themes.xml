@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.ExcelMe" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/firstMenuIconColor</item>
+        <item name="colorPrimaryVariant">@color/thirdMenuIconColor</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnBackground">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,6 +13,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/color</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/firstMenuIconColor</item>
+        <item name="colorOnPrimary">@color/thirdMenuIconColor</item>
     </style>
 
     <style name="Theme.ExcelMe.NoActionBar">
@@ -43,11 +48,33 @@
         <item name="cornerSizeBottomRight">25dp</item>
     </style>
 
+    <style name="cardBottomCorners" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance_cardLeftSideCorners</item>
+    </style>
+
+    <style name="ShapeAppearance_cardBottomCorners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">25dp</item>
+        <item name="cornerSizeBottomLeft">25dp</item>
+    </style>
+
+    <style name="cardUpperCorners" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance_cardUpperCorners</item>
+    </style>
+
+    <style name="ShapeAppearance_cardUpperCorners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">25dp</item>
+        <item name="cornerSizeTopLeft">25dp</item>
+    </style>
+
+
     <style name="menuCard" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">8dp</item>
         <item name="cardCornerRadius">25dp</item>
         <item name="android:layout_height">112dp</item>
         <item name="android:layout_width">112dp</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <style name="menu" parent="Widget.MaterialComponents.CardView">
@@ -64,8 +91,26 @@
     </style>
 
     <style name="menuText">
-        <item  name="android:textSize">22dp</item>
+        <item name="android:textSize">22dp</item>
         <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="settingOption" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="cardBackgroundColor">@color/firstMenuIconColor</item>
+        <item name="cardCornerRadius">18dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="inputRegistration" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="cardBackgroundColor">@color/firstMenuIconColor</item>
+        <item name="cardCornerRadius">18dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <!--The end of styles for cards!-->
@@ -73,4 +118,35 @@
     <style name="Theme.ExcelMe.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ExcelMe.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!--Slider styles-->
+
+    <style name="Myslider" parent="@style/Widget.MaterialComponents.Slider">
+        <item name="labelStyle">@style/My_Tooltip</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Slider</item>
+    </style>
+
+    <style name="My_Tooltip" parent="Widget.MaterialComponents.Tooltip">
+        <!-- background color of the Tooltip -->
+        <item name="backgroundTint">@color/tool_tip_background</item>
+    </style>
+
+    <style name="ThemeOverlay.Slider" parent="">
+        <!-- color used by the text in the Tooltip -->
+        <item name="colorOnPrimary">@color/black</item>
+    </style>
+
+    <style name="Theme.ExcelMe.NoActionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ExcelMe.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ExcelMe.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Slider styles end-->
+
+
 </resources>

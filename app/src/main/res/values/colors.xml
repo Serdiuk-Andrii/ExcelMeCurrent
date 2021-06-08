@@ -12,4 +12,6 @@
     <color name="secondMenuIconColor">#4D987B</color>
     <color name="thirdMenuIconColor">#9CBC9A</color>
     <color name="fourthMenuIconColor">#366855</color>
+    <color name="text_input_outline">#646464</color>
+    <color name="tool_tip_background">#EEEEEE</color>
 </resources>

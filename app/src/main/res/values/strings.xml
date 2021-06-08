@@ -1,15 +1,26 @@
 <resources>
     <string name="app_name">ExcelMe(BasicActivity)</string>
     <string name="action_settings">Settings</string>
+    <string name="preference_file_key">ua.edu.ukma.excelMe</string>
+
+    <!--Saved values keys-->
+
+    <string name="usernameKey">username</string>
+    <string name="genderKey">gender</string>
+    <string name="heightKey">height</string>
+    <string name="weightKey">weight</string>
+    <string name="birthdayKey">birthday</string>
+
+    <!--Seved values keys end-->
+
+
     <!-- Strings used for fragments for navigation -->
     <string name="applicationName">ExcelMe</string>
-    <string name="second_fragment_label">Second page</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="calendarContentDescription">Calendar</string>
     <string name="settingsContentDescription">Settings</string>
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="backContentDescription">Back</string>
     <!--Sections names!-->
 
     <string name="first_section_name">Sport</string>
@@ -26,8 +37,72 @@
     <string name="food_second_section">Lunch</string>
     <string name="food_third_section">Dinner</string>
     <string name="food_fourth_section">Snacks</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_me">About me</string>
+    <string name="activity_level">Activity level</string>
+    <string name="your_plan">Your plan</string>
+
+    <string name="your_name">What\'s your name?</string>
+    <string name="your_sex">Your sex:</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="non">Non</string>
+    <string name="age">Age:</string>
+    <string name="weight">Weight:</string>
+    <string name="height">Height:</string>
+    <string name="what_s_your_goal">What\'s your goal:</string>
+    <string name="loss_weight">Lose Weight</string>
+    <string name="maintain_weight">Maintain Weight</string>
+    <string name="gain_weight">Gain Weight</string>
+    <string name="your_activity_level">How active are you?</string>
+    <string name="inactive">Inactive</string>
+    <string name="super_active">Super Active</string>
+    <string name="it_is_your_plan_preview">It is your plan preview</string>
+    <string name="goal">Goal:</string>
+    <string name="_1600_kcal">1600 kcal</string>
+    <string name="weight_loss">weight loss</string>
+    <string name="ready_to_start">Ready to start!</string>
+    <string name="start">Start</string>
+    <string name="daily_calories">Daily calories:</string>
+    <string name="food_first_section_name">Recipes</string>
+    <string name="food_second_section_name">Eating plan</string>
 
     <!--Sections names end!-->
+    <string xmlns:tools="http://schemas.android.com/tools" name="mtrl_picker_range_header_title" tools:override="true">My Custom Title</string>
+    <!--Settings-->
+
+    <string name="name_hint">Name</string>
+    <string name="height_hint">Height</string>
+    <string name="weight_hint">Weight</string>
+    <string name="goal_hint">Goal</string>
+    <string name="birthday_hint">Birthday</string>
+
+    <string name="height_suffix">cm</string>
+    <string name="weight_suffix">kg</string>
+
+    <string name="save_settings">Save</string>
+    <string name="settings_changed">Settings have been changed</string>
+
+    <!---Settings end-->
+
+    <!--Registration strings!-->
+
+    <string name="tell_us_about_yourself">Tell us about yourself!</string>
+    <string name="registration_male">I\'m a male</string>
+    <string name="registration_female">I\'m a female</string>
+
+
+    <!--Registration strings end!-->
+
+    <string name="recipe_tab_1">Ingredients</string>
+    <string name="recipe_tab_2">Nutrition</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_recipe_expanded">RecipeExpandedActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>

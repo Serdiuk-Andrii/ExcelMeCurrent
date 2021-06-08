@@ -11,10 +11,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
 public class MainFragment extends Fragment{
@@ -33,25 +30,25 @@ public class MainFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         controller = Navigation.findNavController(view);
         ((TextView) view.findViewById(R.id.day)).setText(Day.getCurrentDateString());
-        view.findViewById(R.id.sport_menu_card).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.sport).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 controller.navigate(R.id.action_mainFragment_to_sportFragment);
             }
         });
-        view.findViewById(R.id.food_menu_card).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.food).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                controller.navigate(R.id.action_mainFragment_to_foodFragment);
+                controller.navigate(R.id.action_mainFragment_to_chooseFoodSection);
             }
         });
-        view.findViewById(R.id.habits_menu_card).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.habits).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 controller.navigate(R.id.action_mainFragment_to_habitsFragment);
             }
         });
-        view.findViewById(R.id.sleep_menu_card).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.sleep).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 controller.navigate(R.id.action_mainFragment_to_sleepFragment);

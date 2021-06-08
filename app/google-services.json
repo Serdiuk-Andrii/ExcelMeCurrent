@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1077759752370",
+    "project_id": "excelme-480f1",
+    "storage_bucket": "excelme-480f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077759752370:android:090e0da9482ba0a03ef1ab",
+        "android_client_info": {
+          "package_name": "com.example.excelme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077759752370-0bcng2p1fgm927c73rr8su6d2gp5umt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVX2hLQ20pEcKu9WfPf3ELYGEg3Tf_sVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077759752370-0bcng2p1fgm927c73rr8su6d2gp5umt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

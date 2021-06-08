@@ -13,19 +13,21 @@
         <action
             android:id="@+id/action_mainFragment_to_sportFragment"
             app:destination="@id/sportFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
-        <action
-            android:id="@+id/action_mainFragment_to_foodFragment"
-            app:destination="@id/foodFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
         <action
             android:id="@+id/action_mainFragment_to_sleepFragment"
             app:destination="@id/sleepFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_mainFragment_to_habitsFragment"
             app:destination="@id/habitsFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseFoodSection"
+            app:destination="@id/chooseFoodSection" />
     </fragment>
     <fragment
         android:id="@+id/sportFragment"
@@ -39,16 +41,6 @@
         <action
             android:id="@+id/action_sportFragment_to_sportChooseLevel"
             app:destination="@id/sportChooseLevel"
-            app:enterAnim="@anim/nav_default_enter_anim" />
-    </fragment>
-    <fragment
-        android:id="@+id/foodFragment"
-        android:name="com.example.excelme.FoodFragment"
-        android:label="fragment_food"
-        tools:layout="@layout/fragment_food" >
-        <action
-            android:id="@+id/action_foodFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
             app:enterAnim="@anim/nav_default_enter_anim" />
     </fragment>
     <fragment
@@ -76,4 +68,52 @@
         android:name="com.example.excelme.SportChooseLevel"
         android:label="fragment_sport_choose_level"
         tools:layout="@layout/fragment_sport_choose_level" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.excelme.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutMeFragment"
+            app:destination="@id/aboutMeFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_settingsFragment"
+        app:destination="@id/settingsFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/fade_out"
+        />
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.excelme.RecipesFragment"
+        android:label="fragment_recipes"
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_recipesFragment_to_displayRecipesFragment"
+            app:destination="@id/displayRecipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFoodSection"
+        android:name="com.example.excelme.ChooseFoodSection"
+        android:label="fragment_choose_food_section"
+        tools:layout="@layout/fragment_choose_food_section" >
+        <action
+            android:id="@+id/action_chooseFoodSection_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutMeFragment"
+        android:name="com.example.excelme.AboutMeFragment"
+        android:label="fragment_about_me"
+        tools:layout="@layout/fragment_about_me" />
+    <fragment
+        android:id="@+id/displayRecipesFragment"
+        android:name="com.example.excelme.DisplayRecipesFragment"
+        android:label="fragment_display_recipes"
+        tools:layout="@layout/fragment_display_recipes">
+        <argument android:name="section"
+                  android:defaultValue="breakfast"/>
+
+    </fragment>
 </navigation>
