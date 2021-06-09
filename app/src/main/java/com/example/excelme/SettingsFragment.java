@@ -1,3 +1,8 @@
+/*This class defined the settings menu
+ * File: SettingsFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
 
 package com.example.excelme;
 

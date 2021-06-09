@@ -1,63 +1,48 @@
+/*This file defines an exercise that is displayed during a training
+ * File: Exercise.java
+ * Authors: Serdiuk Andrii, Fedorenko Polina
+ * */
+
 package com.example.excelme;
 
-import android.graphics.drawable.Drawable;
+import com.google.firebase.storage.StorageReference;
 
 public class Exercise {
-    public String eType;
-    public String eComplexity;
-    public String eGender;
-    public String eExercise;
-    public int eTime;
-    public String eDescription;
-    private final Drawable eResultImage;
 
-    public Exercise(String eType, String eComplexity, String eGender, String eExercise, int eTime, String eDescription, Drawable rResultImage) {
-        this.eType = eType;
-        this.eComplexity = eComplexity;
-        this.eGender = eGender;
-        this.eExercise = eExercise;
-        this.eTime = eTime;
-        this.eDescription = eDescription;
-        this.eResultImage = rResultImage;
+    private final String name;
+    private final String description;
+    private final int quantity;
+    private final StorageReference reference;
+    private String downloadUrl;
+
+    public Exercise(String name, String description, int quantity, StorageReference reference) {
+        this.name = name;
+        this.description = description;
+        this.quantity = quantity;
+        this.reference = reference;
     }
 
-    public String geteType() {
-        return eType;
+    public String getDescription() {
+        return description;
     }
 
-    public String geteComplexity() {
-        return eComplexity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public String geteGender() {
-        return eGender;
+    public StorageReference getReference() {
+        return reference;
     }
 
-    public String geteExercise() {
-        return eExercise;
+    public String getDownloadUrl() {
+        return downloadUrl;
     }
 
-    public int geteTime() {
-        return eTime;
+    public String getName() {
+        return name;
     }
 
-    public String geteDescription() {
-        return eDescription;
-    }
-
-    public Drawable geteResultImage() {
-        return eResultImage;
-    }
-
-    @Override
-    public String toString() {
-        return "Exercise{" +
-                "eType='" + eType + '\'' +
-                ", eComplexity='" + eComplexity + '\'' +
-                ", eGender='" + eGender + '\'' +
-                ", eExercise='" + eExercise + '\'' +
-                ", eTime=" + eTime +
-                ", eDescription='" + eDescription + '\'' +
-                +'}';
+    public void setDownloadUrl(String downloadUrl) {
+        this.downloadUrl = downloadUrl;
     }
 }

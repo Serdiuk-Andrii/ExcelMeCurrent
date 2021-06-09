@@ -1,3 +1,9 @@
+/*This class defined the sleep menu
+ * File: SleepFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.app.Activity;

@@ -1,3 +1,10 @@
+/*This class defines how main menu behaves
+ * File: MainFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
+
 package com.example.excelme;
 
 import android.os.Bundle;

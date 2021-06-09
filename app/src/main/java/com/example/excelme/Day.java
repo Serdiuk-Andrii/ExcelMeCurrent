@@ -1,3 +1,9 @@
+/*This class is responsible for setting current day
+ * File: Day.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import java.text.DateFormat;

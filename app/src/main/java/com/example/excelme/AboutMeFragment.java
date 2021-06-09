@@ -1,3 +1,9 @@
+/*This class allows the user to change and save the data about themselves
+* File: AboutMeFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.app.Activity;

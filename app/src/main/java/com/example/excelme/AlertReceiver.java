@@ -1,3 +1,9 @@
+/*This class receives the alert and creates a notification
+ * File: AlertReceiver.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.content.BroadcastReceiver;

@@ -1,3 +1,10 @@
+/*This class defined the behaviour of cooking tab
+ * File: RecipeCookingFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
+
 package com.example.excelme;
 
 import android.os.Bundle;

@@ -13,6 +13,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/roboto"
+        android:lines="2"
         android:text="@string/second_section_name"
         android:textColor="@color/dateTextColour"
         android:textSize="30sp"

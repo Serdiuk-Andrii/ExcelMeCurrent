@@ -67,7 +67,14 @@
         android:id="@+id/sportChooseLevel"
         android:name="com.example.excelme.SportChooseLevel"
         android:label="fragment_sport_choose_level"
-        tools:layout="@layout/fragment_sport_choose_level" />
+        tools:layout="@layout/fragment_sport_choose_level"
+        >
+        <argument android:name="section"
+            android:defaultValue="arms"/>
+        <action
+            android:id="@+id/action_sportChooseLevel_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.excelme.SettingsFragment"
@@ -115,5 +122,38 @@
         <argument android:name="section"
                   android:defaultValue="breakfast"/>
 
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.example.excelme.ExerciseFragment"
+        android:label="fragment_exercise"
+        tools:layout="@layout/fragment_exercise" >
+        <argument android:name="section"
+            android:defaultValue="arms/easy"/>
+        <action
+            android:id="@+id/action_exerciseFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.example.excelme.WorkoutFragment"
+        android:label="fragment_workout"
+        tools:layout="@layout/fragment_workout" >
+        <action
+            android:id="@+id/action_workoutFragment_to_workoutCongratulationsFragment"
+            app:destination="@id/workoutCongratulationsFragment" />
+        <action
+            android:id="@+id/action_workoutFragment_to_sportFragment"
+            app:destination="@id/sportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutCongratulationsFragment"
+        android:name="com.example.excelme.WorkoutCongratulationsFragment"
+        android:label="fragment_workout_congratulations"
+        tools:layout="@layout/fragment_workout_congratulations" >
+        <action
+            android:id="@+id/action_workoutCongratulationsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

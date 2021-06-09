@@ -16,7 +16,6 @@ public class Recipe {
     private final String rInstructions;
     private final String rIngredients;
     private final String rNutrition;
-    private String rType;
 
     public Recipe(String rName, StorageReference reference , String ingredients, String instructions, String nutrition){
         this.rName = rName;
@@ -33,18 +32,15 @@ public class Recipe {
     public String getInstructions(){return rInstructions;}
     public String getIngredients(){return rIngredients;}
     public String getNutrition(){return rNutrition;}
-    public String getType(){return rType;}
 
 
     @Override
     public String toString() {
         return "Recipe{" +
-                "rName='" + rName + '\'' /*+
+                "rName='" + rName + '\'' +
                 ", rInstructions='" + rInstructions + '\'' +
                 ", rIngredients='" + rIngredients + '\'' +
                 ", rNutrition='" + rNutrition + '\'' +
-                ", rResultImage=" + rResultImage +
-                ", rType='" + rType + '\'' +
-                '}'*/;
+                '}';
     }
 }

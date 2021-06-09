@@ -8,6 +8,7 @@
     tools:context=".SportChooseLevel">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         style="@style/menuLeft"
         android:layout_width="260dp"
         android:layout_height="112dp"
@@ -15,51 +16,164 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/chooseLevelString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto"
+                android:text="Please, choose your level"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/workoutType" />
+
+            <TextView
+                android:id="@+id/workoutType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/roboto"
+                android:text="Workout"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/easyTraining"
+                android:id="@+id/easyTrainingCard"
                 style="@style/menuCard"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginBottom="28dp"
                 android:backgroundTint="@color/firstMenuIconColor">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/easy_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="7dp"
+                        android:contentDescription="@string/easy_training"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/menuText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/easy_training"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/easy_icon"
+                        app:layout_constraintStart_toStartOf="@+id/easy_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/easy_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/mediumTraining"
+                android:id="@+id/mediumTrainingCard"
                 style="@style/menuCard"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginBottom="28dp"
-                android:layout_toRightOf="@+id/easyTraining"
+                android:layout_toRightOf="@+id/easyTrainingCard"
                 android:backgroundTint="@color/fourthMenuIconColor">
 
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/medium_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="7dp"
+                        android:contentDescription="@string/medium_training"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/menuText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/medium_training"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/medium_icon"
+                        app:layout_constraintStart_toStartOf="@+id/medium_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/medium_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/hardTraining"
+                android:id="@+id/hardTrainingCard"
                 style="@style/menuCard"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginBottom="28dp"
-                android:layout_toRightOf="@+id/mediumTraining"
+                android:layout_toRightOf="@+id/mediumTrainingCard"
                 android:backgroundTint="@color/thirdMenuIconColor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/hard_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="7dp"
+                        android:contentDescription="@string/hard_training"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/menuText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/hard_training"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/hard_icon"
+                        app:layout_constraintStart_toStartOf="@+id/hard_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/hard_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
 

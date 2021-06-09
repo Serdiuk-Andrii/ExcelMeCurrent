@@ -10,6 +10,12 @@ import android.view.ViewGroup;
 
 public class RegistrationChooseGoalFragment extends Fragment {
 
+    private RegistrationActivity activity;
+
+    public RegistrationChooseGoalFragment(RegistrationActivity activity) {
+        this.activity = activity;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

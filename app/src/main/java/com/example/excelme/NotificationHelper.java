@@ -1,3 +1,10 @@
+/*This class is a helper class for notifications such as alarm clock
+ * File: NotificationHelper.java
+ * Author: Serdiuk Andrii
+ * */
+
+
+
 package com.example.excelme;
 
 import android.app.Notification;

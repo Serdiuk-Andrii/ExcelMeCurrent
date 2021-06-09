@@ -14,6 +14,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class RegistrationNameFragment extends Fragment {
 
+    private RegistrationActivity activity;
+
+    public RegistrationNameFragment(RegistrationActivity activity) {
+        this.activity = activity;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

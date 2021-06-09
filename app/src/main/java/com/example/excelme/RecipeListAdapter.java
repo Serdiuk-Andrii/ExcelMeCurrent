@@ -56,8 +56,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull RecipeListAdapter.ViewHolder holder, int position) {
-        holder.recipeName.setText(recipes.get(position).getName());
         Recipe recipe = recipes.get(position);
+        holder.recipeName.setText(recipe.getName());
         recipe.getImageUrl().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {

@@ -7,12 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".RegistrationChooseGenderFragment">
 
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        app:trackColor="@color/firstMenuIconColor"
+        app:indicatorColor="@color/white"
+        app:trackThickness="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:progress="30"
+        />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/your_goal_card"
         style="@style/menuLeft"
         android:layout_width="280dp"
         android:layout_height="140dp"
         android:layout_marginTop="155dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,9 +43,10 @@
                 android:fontFamily="@font/roboto"
                 android:text="@string/tell_us_about_yourself"
                 android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:textSize="36sp" />
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
+
 
 
     <com.google.android.material.card.MaterialCardView
@@ -39,80 +56,47 @@
         android:layout_marginTop="50dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/your_goal_card">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <RadioGroup
+            android:id="@+id/choose_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/registration_male_card"
-                style="@style/menuCard"
-                android:layout_width="112dp"
-                android:layout_height="112dp"
-                android:layout_marginStart="10dp"
-                android:backgroundTint="@color/thirdMenuIconColor"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            android:layout_gravity="center"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/male_button"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/radio_button_left_selector"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:shadowRadius="10"
+                android:text="I am male"
+                android:textSize = "18sp"
+                android:textColor="@color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/registration_male"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/female_button"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/radio_button_right_selector"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:shadowRadius="10"
+                android:text="I am female"
+                android:textSize = "18sp"
+                android:textColor="@color/black" />
 
-                </RelativeLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/registration_female_card"
-                style="@style/menuCard"
-                android:layout_width="112dp"
-                android:layout_height="112dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="@color/secondMenuIconColor"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/registration_male_card"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/roboto"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/registration_female"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-                </RelativeLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RadioGroup>
 
 
     </com.google.android.material.card.MaterialCardView>

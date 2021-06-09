@@ -1,3 +1,8 @@
+/*This class defined the behaviour recipes menu
+ * File: RecipesFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
 package com.example.excelme;
 
 import android.os.Bundle;

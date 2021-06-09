@@ -1,3 +1,9 @@
+/*This class launches the program after registration
+ * File: MainActivity.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.os.Bundle;

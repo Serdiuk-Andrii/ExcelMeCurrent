@@ -1,3 +1,9 @@
+/*This class defined the behaviour of nutrition tab
+ * File: RecipeNutritionFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.os.Bundle;

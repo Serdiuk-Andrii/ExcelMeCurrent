@@ -1,3 +1,9 @@
+/*This class is responsible for displaying recipes
+ * File: DisplayRecipesFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.app.Activity;
@@ -42,12 +48,10 @@ public class DisplayRecipesFragment extends Fragment {
 
     private void getRecipesFromDatabase() {
         StorageReference recipesReference = storageRef.child("recipes/" + section);
-
-        for (int i = 1; i < 4; i++) {
+        StringBuilder builder = new StringBuilder(100);
+        for (int i = 1; i < 6; i++) {
             int finalI = i;
             StorageReference ref = recipesReference.child(i + "/recipe.txt");
-
-            StringBuilder builder = new StringBuilder(100);
             ref.getBytes(TEN_MEGABYTES).addOnSuccessListener(
                     new OnSuccessListener<byte[]>() {
                         @Override

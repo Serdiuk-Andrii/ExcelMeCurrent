@@ -13,6 +13,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/roboto"
+        android:lines="2"
         android:text="@string/first_section_name"
         android:textColor="@color/dateTextColour"
         android:textSize="30sp"
@@ -219,16 +220,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
-    <Button
-        android:id="@+id/sport_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back (to be removed)"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84000003" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

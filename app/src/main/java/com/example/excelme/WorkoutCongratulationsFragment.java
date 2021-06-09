@@ -1,9 +1,3 @@
-/*This class is responsible for depicting the menu where the user can change section insige food menu
- * File: ChooseFoodSection.java
- * Author: Serdiuk Andrii
- * */
-
-
 package com.example.excelme;
 
 import android.os.Bundle;
@@ -17,32 +11,33 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ChooseFoodSection extends Fragment {
+public class WorkoutCongratulationsFragment extends Fragment {
 
-    NavController controller;
+    private NavController controller;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choose_food_section, container, false);
+    public WorkoutCongratulationsFragment() {
+        // Required empty public constructor
     }
-
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         controller = Navigation.findNavController(view);
-        view.findViewById(R.id.recipes_section).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.finishButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                controller.navigate(R.id.action_chooseFoodSection_to_recipesFragment);
+                controller.navigate(R.id.action_workoutCongratulationsFragment_to_mainFragment);
             }
         });
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_workout_congratulations, container, false);
+    }
 }

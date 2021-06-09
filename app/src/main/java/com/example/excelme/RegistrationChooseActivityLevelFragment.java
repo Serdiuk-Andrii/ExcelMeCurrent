@@ -13,6 +13,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class RegistrationChooseActivityLevelFragment extends Fragment {
 
+    private RegistrationActivity activity;
+
+    public RegistrationChooseActivityLevelFragment(RegistrationActivity activity) {
+        this.activity = activity;
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

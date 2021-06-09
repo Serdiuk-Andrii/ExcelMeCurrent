@@ -1,3 +1,10 @@
+/*This class creates a time picker in another window and notifies the system about
+* user`s selection
+ * File: TimePicker.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.app.Activity;

@@ -1,3 +1,8 @@
+/*This class defined the tab at the end of the registration process
+ * File: ResultFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
 package com.example.excelme;
 
 import android.os.Bundle;
@@ -13,7 +18,16 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 public class ResultFragment extends Fragment {
+
+    private RegistrationActivity activity;
     NavController controller;
+
+    public ResultFragment() {}
+
+    public ResultFragment(RegistrationActivity activity) {
+        this.activity = activity;
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,3 +1,9 @@
+/*This class defined the behaviour of ingredients tab
+ * File: RecipeIngredientsFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.os.Bundle;

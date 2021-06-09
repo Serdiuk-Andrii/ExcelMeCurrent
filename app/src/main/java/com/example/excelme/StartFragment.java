@@ -1,3 +1,9 @@
+/*This class defined the first fragment during registration
+ * File: StartFragment.java
+ * Author: Serdiuk Andrii
+ * */
+
+
 package com.example.excelme;
 
 import android.os.Bundle;

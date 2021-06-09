@@ -95,14 +95,11 @@
 
     <string name="recipe_tab_1">Ingredients</string>
     <string name="recipe_tab_2">Nutrition</string>
+
+    <string name="easy_training">Easy</string>
+    <string name="medium_training">Medium</string>
+    <string name="hard_training">Hard</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_recipe_expanded">RecipeExpandedActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>
