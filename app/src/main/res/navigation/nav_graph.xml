@@ -27,11 +27,13 @@
             app:exitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_mainFragment_to_chooseFoodSection"
-            app:destination="@id/chooseFoodSection" />
+            app:destination="@id/chooseFoodSection"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/sportFragment"
-        android:name="com.example.excelme.SportFragment"
+        android:name="com.example.excelme.menuFragmetns.SportFragment"
         android:label="fragment_sport"
         tools:layout="@layout/fragment_sport" >
         <action
@@ -45,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/sleepFragment"
-        android:name="com.example.excelme.SleepFragment"
+        android:name="com.example.excelme.menuFragmetns.SleepFragment"
         android:label="fragment_sleep"
         tools:layout="@layout/fragment_sleep" >
         <action
@@ -55,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/habitsFragment"
-        android:name="com.example.excelme.HabitsFragment"
+        android:name="com.example.excelme.menuFragmetns.HabitsFragment"
         android:label="fragment_habits"
         tools:layout="@layout/fragment_habits" >
         <action
@@ -102,12 +104,15 @@
     </fragment>
     <fragment
         android:id="@+id/chooseFoodSection"
-        android:name="com.example.excelme.ChooseFoodSection"
+        android:name="com.example.excelme.menuFragmetns.ChooseFoodSection"
         android:label="fragment_choose_food_section"
         tools:layout="@layout/fragment_choose_food_section" >
         <action
             android:id="@+id/action_chooseFoodSection_to_recipesFragment"
             app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_chooseFoodSection_to_fastingFragment"
+            app:destination="@id/fastingFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutMeFragment"
@@ -156,4 +161,9 @@
             android:id="@+id/action_workoutCongratulationsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fastingFragment"
+        android:name="com.example.excelme.FastingFragment"
+        android:label="fragment_fasting"
+        tools:layout="@layout/fragment_fasting" /><action android:id="@+id/action_global_sportFragment" app:destination="@id/sportFragment"/><action android:id="@+id/action_global_chooseFoodSection" app:destination="@id/chooseFoodSection"/><action android:id="@+id/action_global_habitsFragment" app:destination="@id/habitsFragment"/><action android:id="@+id/action_global_sleepFragment" app:destination="@id/sleepFragment"/><action android:id="@+id/action_global_aboutMeFragment" app:destination="@id/aboutMeFragment"/>
 </navigation>

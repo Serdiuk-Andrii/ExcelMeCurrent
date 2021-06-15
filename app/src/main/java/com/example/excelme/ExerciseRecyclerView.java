@@ -1,6 +1,8 @@
 package com.example.excelme;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +58,22 @@ public class ExerciseRecyclerView extends RecyclerView.Adapter<ExerciseRecyclerV
         holder.exerciseCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+                exercise.getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Dialog dialog = new Dialog(ExerciseRecyclerView.this.context);
+                        dialog.setContentView(R.layout.activity_exercise_expanded);
+                        ImageView image = dialog.findViewById(R.id.exercise_explanation_image);
+                        /*Glide.with(context).asGif().load(uri.toString())
+                                .into(image);*/
+
+                        image.setBackgroundColor(Color.BLACK);
+                        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                        MaterialButton button = dialog.findViewById(R.id.hide_exercise);
+                        button.setOnClickListener(a -> dialog.dismiss());
+                        dialog.show();
+                    }
+                });
             }
         });
     }

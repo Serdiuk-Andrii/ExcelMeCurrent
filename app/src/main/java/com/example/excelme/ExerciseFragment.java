@@ -1,7 +1,17 @@
+/*This class is responsible for fetching data about exercises from cloud
+*File: ExerciseFragment.java
+* Author: Serdiuk Andrii
+**/
+
 package com.example.excelme;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,14 +20,7 @@ import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -53,8 +56,8 @@ public class ExerciseFragment extends Fragment {
 
 
     private void getDataFromCloud() {
-       StringBuilder builder = new StringBuilder(100);
-       StorageReference reference = storageRef.child(section);
+        StringBuilder builder = new StringBuilder(100);
+        StorageReference reference = storageRef.child(section);
         for (int i = 1; i < 9; i++) {
             StorageReference tempRef = reference.child(i + "/Exercise.txt");
             int finalI = i;
@@ -84,7 +87,7 @@ public class ExerciseFragment extends Fragment {
                     Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-       }
+        }
     }
 
     @Override

@@ -14,4 +14,10 @@
     <color name="fourthMenuIconColor">#366855</color>
     <color name="text_input_outline">#646464</color>
     <color name="tool_tip_background">#EEEEEE</color>
+
+    <color name="blueLight">#49acd5</color>
+    <color name="green">#45bc62</color>
+    <color name="bluedark">#2f333f</color>
+    <color name="orange">#eaad43</color>
+    <color name="cardBackground">#2f333f</color>
 </resources>

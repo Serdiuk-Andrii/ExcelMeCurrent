@@ -46,6 +46,8 @@ public class DisplayRecipesFragment extends Fragment {
     private FirebaseStorage storage;
     private StorageReference storageRef;
 
+
+    //God bless my soul, Firebase may seem difficult at first
     private void getRecipesFromDatabase() {
         StorageReference recipesReference = storageRef.child("recipes/" + section);
         StringBuilder builder = new StringBuilder(100);
@@ -112,6 +114,5 @@ public class DisplayRecipesFragment extends Fragment {
         adapter = new RecipeListAdapter(context, recipes);
         recyclerView = view.findViewById(R.id.recipes_recycler_view);
     }
-
 
 }

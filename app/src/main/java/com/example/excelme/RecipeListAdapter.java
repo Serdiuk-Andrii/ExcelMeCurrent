@@ -7,24 +7,21 @@
 package com.example.excelme;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -43,7 +40,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Vi
     public RecipeListAdapter() {}
 
 
-    //Control how items in the recycler view are created
+    //Controlling how items in the recycler view are created
     @NonNull
     @NotNull
     @Override
@@ -67,6 +64,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Vi
                 recipe.setDownloadUrl(s);
             }
         });
+        holder.recipeImage.setAnimation(AnimationUtils.loadAnimation(context, R.anim.recipe_image_animation));
+        holder.card.setAnimation(AnimationUtils.loadAnimation(context, R.anim.recipe_card_animation));
         holder.card.setOnClickListener(v -> {
             Intent intent = new Intent(context, RecipeExpandedActivity.class);
             String[] values = new String[5];
@@ -78,7 +77,24 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Vi
             intent.putExtra("recipe", values);
             context.startActivity(intent);
         });
+        holder.recipeName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RecipeExpandedActivity.class);
+                String[] values = new String[5];
+                values[0] = recipe.getName();
+                values[1] = recipe.getDownloadUrl();
+                values[2] = recipe.getIngredients();
+                values[3] = recipe.getNutrition();
+                values[4] = recipe.getInstructions();
+                intent.putExtra("recipe", values);
+                context.startActivity(intent);
+
+            }
+        });
+
     }
+
 
     @Override
     public int getItemCount() {

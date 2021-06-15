@@ -13,6 +13,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/roboto"
+        android:lines="2"
         android:text="@string/food_first_section_name"
         android:textColor="@color/dateTextColour"
         android:textSize="30sp"
@@ -219,6 +220,16 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 

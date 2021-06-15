@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -32,6 +33,7 @@ public class WorkoutFragment extends Fragment {
     private ConstraintLayout workoutLayout;
     private String[] names;
     private String[] urls;
+    private Button stopButton;
     private int id = 1;
 
     public WorkoutFragment() {
@@ -46,6 +48,13 @@ public class WorkoutFragment extends Fragment {
         currentView = view.findViewById(R.id.workoutImage);
         workoutLayout = view.findViewById(R.id.workoutLayout);
         controller = Navigation.findNavController(view);
+        stopButton = view.findViewById(R.id.stopWorkoutButton);
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -67,6 +76,13 @@ public class WorkoutFragment extends Fragment {
                         }
                         else
                             controller.navigate(R.id.action_workoutFragment_to_workoutCongratulationsFragment);
+                    }
+                });
+                workoutLayout.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        controller.navigate(R.id.action_workoutFragment_to_workoutCongratulationsFragment);
+                        return true;
                     }
                 });
             }

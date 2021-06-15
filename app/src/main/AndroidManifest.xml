@@ -14,20 +14,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExcelMe.NoActionBar">
-        <activity android:name=".WelcomeActivity">
-            <!--
+        <activity android:name=".Registration.SpecifyParametersActivity"></activity>
+        <activity android:name=".Registration.ForgotPasswordActivity" />
+        <activity android:name=".Registration.NewUserActivity" />
+        <activity android:name=".Registration.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
+
         <activity android:name=".ExerciseExpandedActivity" />
         <activity
             android:name=".RecipeExpandedActivity"
             android:theme="@style/Theme.ExcelMe.NoActionBar.NoActionBar" />
-        <activity android:name=".RegistrationActivity">
+
+        <activity android:name=".MainActivity">
 
             <!--
             <intent-filter>
@@ -36,19 +39,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
+
         </activity>
-        <activity android:name=".MainActivity">
+
+        <receiver android:name=".AlertReceiver">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
+        </receiver>
 
-        </activity>
+        <receiver android:name=".FastingEndReceiver">
 
-        <receiver android:name=".AlertReceiver" />
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name=".habits.HabitsReceiver">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </receiver>
+
+
+
+
     </application>
 
 </manifest>

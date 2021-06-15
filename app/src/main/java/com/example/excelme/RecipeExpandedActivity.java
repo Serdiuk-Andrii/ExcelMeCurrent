@@ -42,7 +42,7 @@ public class RecipeExpandedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_expanded);
 
-        toolbar = findViewById(R.id.recipe_toolbar);
+        //toolbar = findViewById(R.id.recipe_toolbar);
         setSupportActionBar(toolbar);
 
         viewPager = findViewById(R.id.viewPager);
@@ -118,7 +118,7 @@ public class RecipeExpandedActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             if(position == 0)
                 return "Products";
-            else if(position ==1)
+            if(position == 1)
                 return "Cooking";
             return "Nutrition";
         }

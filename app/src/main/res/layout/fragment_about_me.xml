@@ -112,7 +112,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/choose_gender">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_name"
+                    android:id="@+id/login_email"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:inputType="textPersonName"
@@ -175,7 +175,7 @@
                 android:hint="@string/birthday_hint"
                 app:boxBackgroundColor="@color/white"
                 app:endIconContentDescription="@string/birthday_hint"
-                app:endIconDrawable="@drawable/ic_calendar"
+                app:endIconDrawable="@drawable/calendar"
                 app:endIconMode="custom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

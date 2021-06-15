@@ -1,3 +1,9 @@
+/*This class is responsible for controlling the user`s incorrect input
+ * File: InputFilterMinMax.java
+ * Author: Polina Fedorenko
+ * */
+
+
 package com.example.excelme;
 
 import android.text.InputFilter;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseFoodSection">
+    tools:context=".menuFragmetns.ChooseFoodSection">
 
     <TextView
         android:id="@+id/section_name_food"
@@ -110,12 +110,14 @@
                         android:id="@+id/fasting_section_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="15dp"
                         android:contentDescription="@string/food_second_section_name"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_food" />
+                        app:srcCompat="@drawable/ic_fasting" />
 
                     <TextView
                         android:id="@+id/food_second_section_name"
@@ -142,6 +144,15 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

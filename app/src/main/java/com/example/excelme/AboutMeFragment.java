@@ -1,5 +1,5 @@
 /*This class allows the user to change and save the data about themselves
-* File: AboutMeFragment.java
+ * File: AboutMeFragment.java
  * Author: Serdiuk Andrii
  * */
 
@@ -29,6 +29,12 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -42,19 +48,22 @@ public class AboutMeFragment extends Fragment {
     private AppCompatRadioButton femaleButton;
     private FragmentActivity context;
     private final MaterialDatePicker datePicker = MaterialDatePicker.Builder.datePicker().setTitleText("Select your birthday").build();
-    private String username;
     private boolean isMale;
-    private short height;
-    private short weight;
     private TextInputEditText usernameInput;
     private TextInputEditText heightInput;
     private TextInputEditText weightInput;
     private TextInputEditText birthdayInput;
     private MaterialButton saveButton;
 
+    private static String name, height, weight, birthday;
+    private static FirebaseAuth auth = FirebaseAuth.getInstance();
+    private static DatabaseReference reference = FirebaseDatabase.getInstance("https://excelme-480f1-default-rtdb.europe-west1.firebasedatabase.app").getReference("users");
+
+    private final String userId = auth.getCurrentUser().getUid();
+
     @Override
     public void onAttach(@NotNull Activity activity) {
-        context=(FragmentActivity) activity;
+        context = (FragmentActivity) activity;
         super.onAttach(activity);
     }
 
@@ -92,20 +101,11 @@ public class AboutMeFragment extends Fragment {
     }
 
     private void setupInputs(View view) {
-        username = sharedPref.getString(getString(R.string.usernameKey), "");
-        height = (short) sharedPref.getInt(getString(R.string.heightKey), 0);
-        weight = (short) sharedPref.getInt(getString(R.string.weightKey), 0);
+
         //Filling in the fields
-        usernameInput = (TextInputEditText) view.findViewById(R.id.input_name);
+        usernameInput = (TextInputEditText) view.findViewById(R.id.login_email);
         heightInput = (TextInputEditText) view.findViewById(R.id.input_height);
         weightInput = (TextInputEditText) view.findViewById(R.id.input_weight);
-        if (username.length() > 0)
-            usernameInput.setText(username);
-        if (height > 0)
-            heightInput.setText(String.valueOf(height));
-        if (weight > 0)
-            weightInput.setText(String.valueOf(weight));
-
         //Birthday input setup
         birthdayInput = (TextInputEditText) view.findViewById(R.id.input_birthday);
         birthdayInput.setInputType(InputType.TYPE_NULL);
@@ -114,12 +114,37 @@ public class AboutMeFragment extends Fragment {
             datePicker.show(context.getSupportFragmentManager(), null);
             datePicker.addOnPositiveButtonClickListener(selection -> birthdayInput.setText(datePicker.getHeaderText()));
         });
+
+
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                UserData user = snapshot.getValue(UserData.class);
+                if (user != null) {
+                    name = user.name;
+                    height = user.height;
+                    weight = user.weight;
+                    birthday = user.birthday;
+                    usernameInput.setText(name);
+                    heightInput.setText(height);
+                    weightInput.setText(weight);
+                    birthdayInput.setText(birthday);
+                } else
+                    Toast.makeText(context, "An error occurred downloading your data", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+
     }
 
-    private void setupGenderButtons(){
+    private void setupGenderButtons() {
         //Setting gender button
         RadioButton buttonToActivate;
-        if(isMale)
+        if (isMale)
             buttonToActivate = maleButton;
         else
             buttonToActivate = femaleButton;

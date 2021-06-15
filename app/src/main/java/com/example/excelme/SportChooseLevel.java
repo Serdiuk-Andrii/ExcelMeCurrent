@@ -33,15 +33,18 @@ public class SportChooseLevel extends Fragment {
 
     private NavController controller;
 
+    public enum CurrentTraining {
+        ARMS, LEGS, ABS, FULLBODY;
+    };
+
+    public static CurrentTraining currentTraining;
+
     public static final String COMPLEXITY_EASY = "easy";
     public static final String COMPLEXITY_MEDIUM = "medium";
     public static final String COMPLEXITY_HARD = "hard";
     public static final int COMPLEXITY_EASY_AMOUNT = 4;
     public static final int COMPLEXITY_MEDIUM_AMOUNT = 5;
     public static final int COMPLEXITY_HARD_AMOUNT = 5;
-
-
-    private String section;
     private Activity activity;
 
     @Override
@@ -51,15 +54,27 @@ public class SportChooseLevel extends Fragment {
         return inflater.inflate(R.layout.fragment_sport_choose_level, container, false);
     }
 
+    private String getCurrentTraining() {
+        switch (currentTraining) {
+            case ABS:
+                return "ABS";
+            case LEGS:
+                return "LEGS";
+            case ARMS:
+                return "ARMS";
+            case FULLBODY:
+                return "FULL BODY";
+            default:
+                return "";
+        }
+    }
+
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         activity = getActivity();
         controller = Navigation.findNavController(view);
-        getParentFragmentManager().setFragmentResultListener("destination", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull @NotNull String requestKey, @NonNull @NotNull Bundle result) {
-                SportChooseLevel.this.section = result.getString("destination");
+
                 ImageView easyIcon = view.findViewById(R.id.easy_icon);
                 ImageView mediumIcon = view.findViewById(R.id.medium_icon);
                 ImageView hardIcon = view.findViewById(R.id.hard_icon);
@@ -70,34 +85,33 @@ public class SportChooseLevel extends Fragment {
                 mediumCard.setOnClickListener(new WorkoutClickListener(COMPLEXITY_MEDIUM));
                 hardCard.setOnClickListener(new WorkoutClickListener(COMPLEXITY_HARD));
                 TextView workoutType = view.findViewById(R.id.workoutType);
-                workoutType.setText(section + " WORKOUTS");
-                switch (section) {
-                    case "ABS":
+                workoutType.setText(getCurrentTraining() + " WORKOUTS");
+                switch (currentTraining) {
+                    case ABS:
                         easyIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_abs_beginner));
                         mediumIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_abs_medium));
                         hardIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_abs_advanced));
                         break;
-                    case "LEGS":
+                    case LEGS:
                         easyIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_legs_beginner));
                         mediumIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_legs_medium));
                         hardIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_legs_advanced));
                         break;
-                    case "FULL BODY":
+                    case FULLBODY:
                         easyIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_full_body_beginner));
                         mediumIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_full_body_medium));
                         hardIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_full_body_advanced));
                         break;
-                    case "ARMS":
+                    case ARMS:
                         easyIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_arms_beginner));
                         mediumIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_arms_medium));
                         hardIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_arms_advanced));
                         break;
                     default:
-                        Toast.makeText(activity, "An error occurred loading " + section + " messages", Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity, "An error occurred loading " + getCurrentTraining() + " messages", Toast.LENGTH_LONG).show();
                         break;
                 }
-            }
-        });
+
 
     }
 
@@ -112,7 +126,7 @@ public class SportChooseLevel extends Fragment {
         @Override
         public void onClick(View v) {
             Bundle bundle = new Bundle();
-            bundle.putString("section", section.toLowerCase() + "/" + complexity);
+            bundle.putString("section", getCurrentTraining().toLowerCase() + "/" + complexity);
             getParentFragmentManager().setFragmentResult("section", bundle);
             controller.navigate(R.id.action_sportChooseLevel_to_exerciseFragment);
         }

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_colours_gradient"
+    tools:context=".FastingFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/CircularDeterminateProgressBar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        tools:progress="0" />
+
+    <TextView
+        android:id="@+id/text_view_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar"
+        app:layout_constraintTop_toTopOf="@+id/progress_bar"
+         />
+
+    <Button
+        android:id="@+id/start_fasting"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="Start"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+
+    <Button
+        android:id="@+id/stop_fasting"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="Stop"
+        app:backgroundTint="#F44336"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+
+    <RadioGroup
+        android:id="@+id/intervals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/firstInterval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+        <RadioButton
+            android:id="@+id/firstInterval"
+            android:layout_width="85dp"
+            android:layout_height="70dp"
+            android:background="@drawable/fasting_left_radio_button_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:text="14 - 10"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_text_colour"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/secondInterval"
+            android:layout_width="85dp"
+            android:layout_height="70dp"
+            android:background="@drawable/fasting_radio_button_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:text="16 - 8"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_text_colour"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/thirdInterval"
+            android:layout_width="85dp"
+            android:layout_height="70dp"
+            android:background="@drawable/fasting_radio_button_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:text="18 - 6"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_text_colour"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/fourthInterval"
+            android:layout_width="85dp"
+            android:layout_height="70dp"
+            android:background="@drawable/fasting_right_radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:text="20 - 4"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_text_colour"
+            android:textSize="18sp" />
+
+    </RadioGroup>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
